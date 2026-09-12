@@ -52,6 +52,19 @@ git -C "$ROOT_DIR" tag "$TAG"
 echo "Publishing to PyPI..."
 uv publish
 
+echo "Pushing commit and tag..."
+git -C "$ROOT_DIR" push origin HEAD
+git -C "$ROOT_DIR" push origin "$TAG"
+
+echo "Creating GitHub release..."
+if gh release view "$TAG" >/dev/null 2>&1; then
+    echo "Release $TAG already exists — skipping"
+else
+    gh release create "$TAG" \
+        --title "$PACKAGE v${VERSION}" \
+        --notes "" \
+        dist/*
+fi
+
 echo ""
 echo "Done. Published $PACKAGE v${VERSION} as tag $TAG."
-echo "Push with: git push origin HEAD --tags"
