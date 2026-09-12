@@ -5,6 +5,7 @@ requires-python = ">=3.13, <4.0"
 [manifest]
 members = [
     "voltwire-db-session",
+    "voltwire-db-types-json",
     "voltwire-di-core",
     "voltwire-workspace",
 ]
@@ -303,6 +304,29 @@ dev = [
 requires-dist = [
     { name = "pydantic", specifier = ">=2.9,<3" },
     { name = "pydantic-settings", specifier = ">=2.3,<3" },
+    { name = "sqlalchemy", specifier = ">=2.0,<3" },
+]
+
+[package.metadata.requires-dev]
+dev = [{ name = "pytest", specifier = ">=8.0" }]
+
+[[package]]
+name = "voltwire-db-types-json"
+version = "0.0.0"
+source = { editable = "voltwire-db-types-json" }
+dependencies = [
+    { name = "pydantic" },
+    { name = "sqlalchemy" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "pytest" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "pydantic", specifier = ">=2.9,<3" },
     { name = "sqlalchemy", specifier = ">=2.0,<3" },
 ]
 
