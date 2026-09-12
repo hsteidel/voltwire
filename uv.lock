@@ -387,7 +387,7 @@ dev = [{ name = "pytest", specifier = ">=8.0" }]
 
 [[package]]
 name = "voltwire-db-types-json"
-version = "0.0.0"
+version = "0.0.1"
 source = { editable = "voltwire-db-types-json" }
 dependencies = [
     { name = "pydantic" },
