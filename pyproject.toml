@@ -15,4 +15,5 @@ members = [
     "voltwire-db-types-json",
     "voltwire-fastapi-exceptions",
     "voltwire-fastapi-logging",
+    "voltwire-fastapi-db-txs",
 ]

@@ -7,6 +7,7 @@ members = [
     "voltwire-db-session",
     "voltwire-db-types-json",
     "voltwire-di-core",
+    "voltwire-fastapi-db-txs",
     "voltwire-fastapi-exceptions",
     "voltwire-fastapi-logging",
     "voltwire-workspace",
@@ -422,6 +423,31 @@ dev = [
 
 [package.metadata]
 requires-dist = [{ name = "dependency-injector", specifier = ">=4.48.1,<5" }]
+
+[package.metadata.requires-dev]
+dev = [{ name = "pytest", specifier = ">=8.0" }]
+
+[[package]]
+name = "voltwire-fastapi-db-txs"
+version = "0.0.0"
+source = { editable = "voltwire-fastapi-db-txs" }
+dependencies = [
+    { name = "fastapi" },
+    { name = "starlette" },
+    { name = "voltwire-db-session" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "pytest" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "fastapi", specifier = ">=0.100.0" },
+    { name = "starlette", specifier = ">=0.27.0" },
+    { name = "voltwire-db-session", editable = "voltwire-db-session" },
+]
 
 [package.metadata.requires-dev]
 dev = [{ name = "pytest", specifier = ">=8.0" }]

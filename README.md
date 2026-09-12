@@ -17,6 +17,7 @@ published to PyPI; this repo is a monorepo purely for convenience during develop
 | <img src="assets/icons/db-types-json.svg" width="28" height="28"> | [voltwire-db-types-json](voltwire-db-types-json) | Custom SQLAlchemy JSONB column types backed by Pydantic models |
 | <img src="assets/icons/fastapi-exceptions.svg" width="28" height="28"> | [voltwire-fastapi-exceptions](voltwire-fastapi-exceptions) | Reusable FastAPI exception hierarchy + unified exception handler |
 | <img src="assets/icons/fastapi-logging.svg" width="28" height="28"> | [voltwire-fastapi-logging](voltwire-fastapi-logging) | Logging utilities for FastAPI apps |
+| <img src="assets/icons/fastapi-db-txs.svg" width="28" height="28"> | [voltwire-fastapi-db-txs](voltwire-fastapi-db-txs) | FastAPI middleware/dependencies for request-scoped DB transactions |
 
 ## Development
 
