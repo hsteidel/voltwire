@@ -1,6 +1,6 @@
 [project]
 name = "voltwire-fastapi-logging"
-version = "0.0.0"
+version = "0.0.1"
 description = "Logging utilities for FastAPI apps"
 authors = [{name = "Hermann Steidel", email = "hsteidel.software@gmail.com"}]
 license = "MIT"

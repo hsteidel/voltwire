@@ -477,7 +477,7 @@ dev = [{ name = "pytest", specifier = ">=8.0" }]
 
 [[package]]
 name = "voltwire-fastapi-logging"
-version = "0.0.0"
+version = "0.0.1"
 source = { editable = "voltwire-fastapi-logging" }
 dependencies = [
     { name = "loguru" },
