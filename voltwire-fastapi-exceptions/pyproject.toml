@@ -1,6 +1,6 @@
 [project]
 name = "voltwire-fastapi-exceptions"
-version = "0.0.0"
+version = "0.0.1"
 description = "Reusable FastAPI base exceptions, ApiMessage, and a unified exception handler"
 authors = [{name = "Hermann Steidel", email = "hsteidel.software@gmail.com"}]
 license = "MIT"
