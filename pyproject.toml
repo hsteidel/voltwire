@@ -14,4 +14,5 @@ members = [
     "voltwire-db-session",
     "voltwire-db-types-json",
     "voltwire-fastapi-exceptions",
+    "voltwire-fastapi-logging",
 ]
