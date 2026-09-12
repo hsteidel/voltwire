@@ -41,7 +41,8 @@ if git -C "$ROOT_DIR" rev-parse "$TAG" >/dev/null 2>&1; then
 fi
 
 echo "Building..."
-uv build
+rm -rf dist
+uv build -o dist
 
 echo "Committing and tagging..."
 git -C "$ROOT_DIR" add "$PACKAGE_DIR/pyproject.toml"
