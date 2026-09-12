@@ -13,6 +13,7 @@ published to PyPI; this repo is a monorepo purely for convenience during develop
 | | Package | Description |
 |---|---|---|
 | <img src="assets/icons/di-core.svg" width="28" height="28"> | [voltwire-di-core](voltwire-di-core) | Framework-agnostic DI container & `@component` auto-discovery |
+| <img src="assets/icons/db-session.svg" width="28" height="28"> | [voltwire-db-session](voltwire-db-session) | Configurable SQLAlchemy session factory |
 
 ## Development
 

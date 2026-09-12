@@ -11,4 +11,5 @@ package = false
 [tool.uv.workspace]
 members = [
     "voltwire-di-core",
+    "voltwire-db-session",
 ]
