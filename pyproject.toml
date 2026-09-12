@@ -1,0 +1,13 @@
+[project]
+name = "voltwire-workspace"
+version = "0.0.0"
+description = "Workspace root for the voltwire library collection (not published)"
+requires-python = ">=3.13,<4.0"
+dependencies = []
+
+[tool.uv]
+package = false
+
+[tool.uv.workspace]
+members = [
+]
