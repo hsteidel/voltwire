@@ -45,7 +45,7 @@ rm -rf dist
 uv build -o dist
 
 echo "Committing and tagging..."
-git -C "$ROOT_DIR" add "$PACKAGE_DIR/pyproject.toml"
+git -C "$ROOT_DIR" add "$PACKAGE_DIR/pyproject.toml" "$ROOT_DIR/uv.lock"
 git -C "$ROOT_DIR" commit -m "release: bump $PACKAGE to v${VERSION}"
 git -C "$ROOT_DIR" tag "$TAG"
 
