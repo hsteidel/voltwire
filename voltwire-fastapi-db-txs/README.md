@@ -151,7 +151,7 @@ captured at wiring time) or lazily per request (e.g. `request.app.state.provide(
 without this library needing to know which. `AppStateResolver` is the one piece that
 assumes anything about `request.app.state` beyond FastAPI itself — it exists purely as a
 convenience for voltwire-di-core's convention; everything else in this library only ever calls
-the resolver, never reaches into `request.app.state` directly. The one invariant that
+the resolver, never reaches into `request.app.state` directly. The one thing that
 matters regardless of which resolver you use: share the *same* `TransactionContext`
 instance across the middleware, any read-only dependencies, and your app's own
 session-resolution code — its ContextVars are what tie a request's session together.

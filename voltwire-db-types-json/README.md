@@ -47,12 +47,3 @@ class User(Base):
     __tablename__ = "users"
     address: Mapped[Address | None] = mapped_column(JSONBObject(Address), nullable=True)
 ```
-
-## Logging
-
-Validation errors in `JSONBObject` are logged to the `voltwire.db.types.json.types` logger namespace and return `None` rather than raising — this prevents a single bad row from crashing the application.
-
-```python
-import logging
-logging.getLogger("voltwire.db.types.json").setLevel(logging.DEBUG)
-```

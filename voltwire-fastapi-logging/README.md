@@ -2,8 +2,7 @@
 
 # voltwire-fastapi-logging
 
-Logging utilities for FastAPI apps: request-context-enriching middleware, loguru-based setup
-with plain-text or cloud JSON output, and optional Sentry tagging.
+Logging utilities for FastAPI apps: request-context-enriching middleware.
 
 ## Installation
 

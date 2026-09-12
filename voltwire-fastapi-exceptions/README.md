@@ -103,28 +103,3 @@ handler hides the raw exception string; otherwise it includes it to aid debuggin
 Rather than force a settings system on you, it takes any object matching the
 `ExceptionHandlerSettings` protocol — a single `production: bool`. Use the provided
 `DefaultExceptionHandlerSettings`, or pass your own object exposing `production`.
-
-## Logging
-
-Handlers log via `logging.getLogger(__name__)` (Python's standard `logging` module) —
-`AppWarning` at `warning`, real errors at `error`/`exception`. To activate debug output:
-
-```python
-import logging
-logging.getLogger("voltwire.fastapi.exceptions").setLevel(logging.DEBUG)
-```
-
-If your app uses [loguru](https://github.com/Delgan/loguru), intercept stdlib logging once at startup:
-
-```python
-import logging
-from loguru import logger
-
-class InterceptHandler(logging.Handler):
-    def emit(self, record: logging.LogRecord) -> None:
-        logger.opt(depth=6, exception=record.exc_info).log(
-            record.levelname, record.getMessage()
-        )
-
-logging.getLogger("voltwire.fastapi.exceptions").addHandler(InterceptHandler())
-```

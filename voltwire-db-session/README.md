@@ -130,29 +130,3 @@ def list_items():
     finally:
         session.close()
 ```
-
-## Logging
-
-The library emits to the `voltwire.db.session` logger namespace using Python's standard `logging` module. To activate debug output:
-
-```python
-import logging
-logging.getLogger("voltwire.db.session").setLevel(logging.DEBUG)
-```
-
-### Routing to loguru
-
-If your app uses [loguru](https://github.com/Delgan/loguru), intercept stdlib logging once at startup:
-
-```python
-import logging
-from loguru import logger
-
-class InterceptHandler(logging.Handler):
-    def emit(self, record: logging.LogRecord) -> None:
-        logger.opt(depth=6, exception=record.exc_info).log(
-            record.levelname, record.getMessage()
-        )
-
-logging.getLogger("voltwire.db.session").addHandler(InterceptHandler())
-```

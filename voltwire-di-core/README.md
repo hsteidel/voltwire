@@ -2,9 +2,9 @@
 
 # voltwire-di-core
 
-A small, framework-agnostic dependency-injection framework for Python. Decorate your classes with `@component`, point the auto-discovery scanner at your package, and get a wired global container — no manual registration boilerplate. Works in a FastAPI app, a plain script, an AWS Lambda, or anywhere else.
-
-Built on [`dependency-injector`](https://python-dependency-injector.ets-labs.org/) for the underlying provider machinery.
+A small, dependency injection based framework for Python built on top of [`dependency-injector`](https://python-dependency-injector.ets-labs.org/). 
+Decorate your classes with `@component`, point the auto-discovery scanner at your package, and get a wired global container — no manual registration boilerplate. 
+Works in a FastAPI app, a plain script, an AWS Lambda, or anywhere else.
 
 ## Installation
 
@@ -167,26 +167,3 @@ def build(request: Request) -> GreetingService:
 GreetingServiceDI = Annotated[GreetingService, Depends(build)]
 ```
 
-## Logging
-
-The library emits to per-module `logging.getLogger(__name__)` loggers under `voltwire.di.core.*` using Python's standard `logging` module (mostly at `debug`). Registration/resolution failures log at `error`. To activate debug output:
-
-```python
-import logging
-logging.getLogger("voltwire.di.core").setLevel(logging.DEBUG)
-```
-
-If your app uses [loguru](https://github.com/Delgan/loguru), intercept stdlib logging once at startup:
-
-```python
-import logging
-from loguru import logger
-
-class InterceptHandler(logging.Handler):
-    def emit(self, record: logging.LogRecord) -> None:
-        logger.opt(depth=6, exception=record.exc_info).log(
-            record.levelname, record.getMessage()
-        )
-
-logging.getLogger("voltwire.di.core").addHandler(InterceptHandler())
-```
