@@ -1,6 +1,6 @@
 [project]
 name = "voltwire-di-core"
-version = "0.0.1"
+version = "0.0.2"
 description = "Reusable framework-agnostic DI container & @component auto-discovery"
 authors = [{name = "Hermann Steidel", email = "hsteidel.software@gmail.com"}]
 license = "MIT"
