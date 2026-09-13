@@ -1,6 +1,6 @@
 [project]
 name = "voltwire-db-session"
-version = "0.0.1"
+version = "0.0.2"
 description = "A configurable DB session factory"
 authors = [{name = "Hermann Steidel", email = "hsteidel.software@gmail.com"}]
 license = "MIT"
