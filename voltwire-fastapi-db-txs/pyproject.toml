@@ -1,6 +1,6 @@
 [project]
 name = "voltwire-fastapi-db-txs"
-version = "0.0.0"
+version = "0.0.1"
 description = "FastAPI middleware and dependencies for request-scoped DB transaction management"
 authors = [{name = "Hermann Steidel", email = "hsteidel.software@gmail.com"}]
 license = "MIT"
